@@ -12,7 +12,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div class="navbar bg-base-100">
+            <div class="navbar bg-base-100 pl-20">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -21,11 +21,11 @@ const Navbar = () => {
                         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {menuItems}
                         </ul>
-                    </div>
-                    <a class="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+                    </div >
+                    <a class="btn btn-ghost normal-case text-xl pl-8">Doctors Portal</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal p-0">
+                    <ul class="menu menu-horizontal">
                         {menuItems}
                     </ul>
                 </div>
