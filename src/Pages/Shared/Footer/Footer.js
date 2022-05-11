@@ -7,7 +7,7 @@ const Footer = () => {
             background: `url(${footer})`,
             backgroundSize: 'cover'
         }} >
-            <div className="footer p-10 ">
+            <div className="footer py-28 ">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div>
                 <div className='my-10 text-center'>
-                    <p ><small>Copyright © {(new Date().getFullYear())} - All right reserved by ACME Industries Ltd</small></p>
+                    <p ><small>Copyright © {(new Date().getFullYear())} - All Rights Reserved</small></p>
                 </div>
             </div>
         </footer>
