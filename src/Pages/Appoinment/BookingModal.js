@@ -1,14 +1,35 @@
 import { format } from 'date-fns';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const BookingModal = ({ treatment, date, setTreatment }) => {
     const { _id, name, slots } = treatment;
 
     const handleBooking = event => {
         event.preventDefault();
-        const slot = event.target.slot.value;
-        console.log(_id, name, slot);
+        const bookings = {
+            name: event.target.name.value,
+            slots: event.target.slot.value,
+            email: event.target.email.value,
+            phon: event.target.phon.value
+        }
+        const url = `http://localhost:5000/bookings`
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookings)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                alert('Successful Item added')
+                event.target.reset();
+            })
+        // to close the modal
         setTreatment(null)
+
+
     }
     return (
         <div>
@@ -27,10 +48,10 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
                                 slots.map(slot => <option value={slot}>{slot}</option>)
                             }
                         </select>
-                        <input type="text" name='name' placeholder="Your name" class="input w-full max-w-xs" />
-                        <input type="text" name='email' placeholder="Email Address" class="input w-full max-w-xs" />
-                        <input type="text" name='phon' placeholder="Phon Number" class="input w-full max-w-xs" />
-                        <input type="submit" value='Submit' placeholder="Type here" class="btn btn-secondary w-full max-w-xs" />
+                        <input type="text" name='name' placeholder="Your name" class="input w-full max-w-xs" required />
+                        <input type="text" name='email' placeholder="Email Address" class="input w-full max-w-xs" required />
+                        <input type="text" name='phon' placeholder="Phon Number" class="input w-full max-w-xs" required />
+                        <input type="submit" value='Submit' placeholder="Type here" class="btn btn-secondary w-full max-w-xs" required />
                     </form>
                 </div>
             </div>
