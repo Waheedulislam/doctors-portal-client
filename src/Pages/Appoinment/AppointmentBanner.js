@@ -8,8 +8,8 @@ const AppointmentBanner = ({ date, setDate }) => {
     return (
         <div style={{
             background: `url(${appointment})`
-        }} class="hero min-h-screen  ">
-            <div class="hero-content flex-col lg:flex-row-reverse">
+        }} className="hero min-h-screen  ">
+            <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='lg:w-6/12 lg:pl-28'>
                     <img src={chair} className="rounded-lg shadow-2xl" alt='Dentist Chair' />
                 </div>
