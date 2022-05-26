@@ -9,7 +9,6 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
-        localStorage.removeItem('accessToken');
     };
     const menuItems = <>
         <li><Link to='/home'>Home</Link></li>
@@ -21,6 +20,7 @@ const Navbar = () => {
             user && <li><Link to='/dashboard'>DashBoard</Link></li>
         }
         <li>{user ? <button onClick={logout} className="btn btn-ghost">Sign Out</button> : <Link to='/login'>Login</Link>}</li>
+
     </>
     return (
         <div>
@@ -34,7 +34,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div >
-                    <a className="btn btn-ghost normal-case text-xl pl-8"> <Link to='/home'>Doctors Portal</Link></a>
+                    <h5 className="btn btn-ghost normal-case text-xl pl-8"> <Link to='/home' className='text-2xl'><h5 className='text-2xl'>Doctors Portal</h5></Link></h5>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal">
